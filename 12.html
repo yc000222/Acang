@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid布局</title>
+    <style>
+        article {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            /* 开启grid */
+            display: grid;
+            grid-template-rows: repeat(3,100px);
+            grid-template-columns: repeat(3, 100px);
+            grid-auto-flow: column;
+        }
+
+        div {
+            background-color: pink;
+        }
+
+        article div:nth-child(1) {
+            /* grid-row: 1 / span 1;
+            grid-column:1 / span 2 ; */
+        }
+
+        article div:nth-child(2) {
+            /* grid-row: 2 / 3;
+            grid-column:2 / 3 ; */
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </article>
+</body>
+</html>

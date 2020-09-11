@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid布局</title>
+    <style>
+        article {
+            width: 600px;
+            height: 600px;
+            border: 1px solid red;
+            /* 开启grid */
+            display: grid;
+            /* 容器和网格行程的结构相同 */
+            grid-template-rows: repeat(3, 100px);
+            grid-template-columns: repeat(3, 100px);
+            /* 横向调整网格的位置 */
+            /* justify-content: space-between; */
+            /* 纵向调整网格的位置 */
+            /* align-content: space-evenly;
+             */
+             /* place-content: center end; */
+
+             /* 调整元素在单元格中水平的位置 */
+             /* justify-items: center; */
+
+             /* 调整元素在单元格中垂直方向的位置 */
+             /* align-items: center; */
+
+             place-items: end center;
+        }
+
+        article div {
+            background-color: lightgreen;
+            width: 60px;
+            height: 60px;
+        }
+
+        article div:nth-child(1) {
+            /* justify-self: center;
+            align-self: center;
+             */
+             place-self: center center;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </article>
+</body>
+</html>

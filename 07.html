@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid布局</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            /* 开启grid布局 */
+            display: grid;
+            /* 划出行和列，设置行高和列宽 */
+            /* 设置行高 */
+            /* grid-template-rows: repeat(auto-fill, 100px);  */
+            grid-template-rows:[r1-start] 100px [r1-end r2-start] 100px [r2-end r3-start] 100px [r3-end];
+            /* grid-template-rows: 1fr 2fr 1fr;  */
+            /* 设置列宽 */
+            /* grid-template-columns: repeat(3, 100px); */
+            grid-template-columns: repeat(3,[c-start] 100px [c-end]);;
+        }
+        .box div {
+            /* 如果子元素没有设置宽度和高度，默认占满单元格的宽度和高度 */
+            background-color: pink;
+        }
+
+        .box div:nth-child(1) {
+
+            /* 行的起始边位置和结束边位置 */
+            grid-row: 1 / span 3;
+
+            /* 列的起始边位置和结束边位置 */
+            grid-column: 1 / span 3;
+            /* 行的起始边位置 */
+            /* grid-row-start: 2; */
+            /* 行的结束边位置 */
+            /* grid-row-end: 3; */
+            /* 列的起始边位置 */
+            /* grid-column-start: 1; */
+            /* 列的结束边位置 */
+            /* grid-column-end: 2; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+    </div>
+</body>
+</html>

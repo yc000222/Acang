@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid布局</title>
+    <style>
+        .content {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            /* 开启grid布局 */
+            /* 块级元素 */
+            display: grid;
+            
+            /* grid-template-rows: repeat(3, 100px);
+            grid-template-columns: repeat(3, 100px); */
+
+            /* grid-template-rows:[r1-start] 100px [r1-end r2-start] 100px [r2-end r3-start] 100px [r3-end];
+            grid-template-columns:[c1-start] 100px [c1-end c2-start] 100px [c2-end c3-start] 100px [c3-end]; */
+
+            grid-template-rows: repeat(3, [r-start] 100px [r-end]);
+            grid-template-columns: repeat(3,[c-start] 100px [c-end]);
+            
+            /* gap设置行间距和列间距 */
+            /* 如果设置一个值，这个值就表示行间距和列间距 */
+            /* 如果设置两个值，第一个值表示行间距 第二个值表示列间距 */
+            /* gap: 10px; */
+
+        }
+
+        .content div {
+            /* 不管子元素的宽度和高度，一个由网格线构成的单元格只能放一个子元素 */
+            background-color: orange;
+            /* 如果子元素没有设置宽度和高度，默认占满单元格 */
+            /* width: 40px;
+            height: 40px; */
+        }
+
+        .content div:nth-child(1) {
+            /* grid-row-start: r-start 3;
+            grid-row-end: r-end 4;
+            grid-column-start: c-start 3;
+            grid-column-end: c-end 4; */
+
+            grid-row: 2 / span 2;
+            grid-column: 1 / span 1;
+        }
+
+        .content div:last-child {
+            grid-row: 1 / span 1;
+            grid-column: 1 / span 3;
+            /* grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 3;
+            grid-column-end: 4; */
+        }
+    </style>
+</head>
+<body>
+    <!-- <button>点击</button> -->
+    <div class="content">
+        <div>1</div>
+        <div>xxxx</div>
+        <!-- <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div> -->
+    </div>
+</body>
+</html>
